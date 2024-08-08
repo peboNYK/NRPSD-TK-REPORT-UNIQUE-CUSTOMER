@@ -1,0 +1,39 @@
+schemaVersion: 2.1.0
+metadata:
+  name: python-template-repo-deploy
+components:
+  - name: python
+    container:
+      image: default-route-openshift-image-registry.apps.c02p.paas.nykreditnet.net/openshift-devspaces/nk-udi-ubi9-ds310-python:0.0.1
+      memoryLimit: 5G
+      env: 
+        - name: DATABASE1_NAME
+          value: MART01P1
+        - name: PYTHONPATH
+          value: "/projects/python-template-repo/src"
+        - name: VSCODE_DEFAULT_WORKSPACE
+          value: .
+commands:
+  - id: create-environment
+    exec:
+      component: python
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: |
+        if [ ! -d .venv ]
+        then 
+          python3.11 -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+        fi
+        if [ -f requirements.txt ]
+        then 
+          source .venv/bin/activate
+          pip install -r requirements.txt
+        fi
+  - id: pip-freeze
+    exec:
+      component: python
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: |
+        source .venv/bin/activate
+        pip freeze > requirements.txt
