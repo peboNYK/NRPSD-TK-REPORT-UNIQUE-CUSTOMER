@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "teabyii.ayu",
+        "mhutchie.git-graph",
+        "ms-toolsai.jupyter",
+        "njpwerner.autodocstring",
+        "ms-python.black-formatter",
+        "bungcip.better-toml",
+        "gruntfuggly.todo-tree"
+    ]
+}
