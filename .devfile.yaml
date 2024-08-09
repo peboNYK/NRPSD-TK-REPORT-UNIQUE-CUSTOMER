@@ -1,16 +1,16 @@
 schemaVersion: 2.1.0
 metadata:
-  name: python-template-repo-deploy
+  name: NRPSD-TK-REPORT-UNIQUE-CUSTOMER
 components:
   - name: python
     container:
       image: default-route-openshift-image-registry.apps.c02p.paas.nykreditnet.net/openshift-devspaces/nk-udi-ubi9-ds310-python:0.0.1
-      memoryLimit: 5G
+      memoryLimit: 2G
       env: 
         - name: DATABASE1_NAME
           value: MART01P1
         - name: PYTHONPATH
-          value: "/projects/python-template-repo/src"
+          value: "/projects/NRPSD-TK-REPORT-UNIQUE-CUSTOMER/src"
         - name: VSCODE_DEFAULT_WORKSPACE
           value: .
 commands:
