@@ -5,7 +5,7 @@ components:
   - name: python
     container:
       image: default-route-openshift-image-registry.apps.c02p.paas.nykreditnet.net/openshift-devspaces/nk-udi-ubi9-ds310-python:0.0.1
-      memoryLimit: 2G
+      memoryLimit: 5G
       env: 
         - name: DATABASE1_NAME
           value: MART01P1
