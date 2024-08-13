@@ -163,5 +163,7 @@ cython_debug/
 
 
 # folders
-src/data/
-src/masked_data/
+src/data/*
+!src/data/.gitkeep
+src/masked_data/*
+!src/masked_data/.gitkeep
